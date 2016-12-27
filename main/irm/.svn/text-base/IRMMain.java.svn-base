@@ -1,0 +1,32 @@
+
+package irm;
+
+/**
+ * 主程序入口
+ * @author	TangDican
+ * @email	tangdican2008@163.com
+ * @date	2013 Aug 28
+ */
+public class IRMMain {	
+	// main方法
+	public static void main(String[] args)
+	{	
+		// 给定实例id的值
+		String[] instanceIds = "82".split(",");
+		
+		// 创建WResourceView
+	//	QualityAnalysis qa = new QualityAnalysis();
+		// 运行实例
+	//	qa.run(instanceIds);
+		
+		// 创建WResourceView
+	//	WResourceView wrv = new WResourceView();
+		// 运行实例
+	//	wrv.run(instanceIds);
+		
+		// 创建Monitor
+		Monitor m = new Monitor();
+		// 运行实例
+		m.run(instanceIds);
+	}
+}

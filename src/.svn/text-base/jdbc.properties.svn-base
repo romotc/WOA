@@ -1,0 +1,9 @@
+db.driver=org.gjt.mm.mysql.Driver
+db.url=jdbc:mysql://ahyd.chinajet.co:3310/centerdb
+db.user=hongganju
+db.password=hongganju
+db.alias=MySqlPool
+db.houseKeepingTestSql=select 1
+db.characterEncoding=utf8
+db.maximumConnectionCount=30
+db.minimumConnectionCount=10

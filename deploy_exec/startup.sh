@@ -1,0 +1,1 @@
+java -Xms256m -Xmx1024m -cp lib/*;./config/;./xml SingleTestMain $1 $2 $3 $4 $5

@@ -1,0 +1,1 @@
+java -cp lib/*;./config/;./xml com.flv.weitang.WeitangRobot %1 %2 %3 %4 %5

@@ -1,0 +1,37 @@
+10
+
+dir
+3604
+svn://reportcenter.hongganju.com/hongganju/codes/WOA/src/weblech
+svn://reportcenter.hongganju.com/hongganju
+
+
+
+2013-06-26T02:06:26.358640Z
+3482
+liqiang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+83c20575-ab40-4487-b8cb-f51bc13ded23
+
+console
+dir
+
+spider
+dir
+
+util
+dir
+

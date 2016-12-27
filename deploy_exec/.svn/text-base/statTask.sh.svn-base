@@ -1,0 +1,1 @@
+java -cp lib/*:./config/:./xml com.hongganju.woa.stat.StatWOADomain $1 $2 $3

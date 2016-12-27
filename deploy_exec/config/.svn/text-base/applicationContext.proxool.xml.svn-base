@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+					http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+					http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd
+					http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd"
+	default-lazy-init="true">
+
+	<bean id="dataSource" class="org.logicalcobwebs.proxool.ProxoolDataSource">		
+		<property name="driver" value="org.gjt.mm.mysql.Driver"/>
+		<property name="driverUrl" value="#url"/>
+		<property name="user" value="#name"/>
+		<property name="password" value="#password"/>
+    	<property name="alias" value="#alias"/>
+    	
+    	<property name="houseKeepingTestSql" value="select 1"/>
+    	<property name="delegateProperties" value="characterEncoding=utf8"/>
+
+    	<property name="maximumConnectionCount" value="20"/>
+
+    	<property name="minimumConnectionCount" value="10"/>
+
+    	 <property name="prototypeCount" value="10"/>
+
+
+    	<property name="houseKeepingSleepTime" value="90000"/> 
+    	
+ 
+    	<property name="maximumActiveTime" value="900000"/> 
+
+    	<property name="maximumConnectionLifetime" value="3600000"/> 
+    	
+
+    	<property name="testBeforeUse" value="true"/> 
+		
+    	
+	</bean>
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="mappingDirectoryLocations">
+			<list>
+			#entitys
+			<!--  
+			<value>classpath:/com/hongganju/db/entity/task</value>
+			-->
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<value>
+			hibernate.dialect=org.hibernate.dialect.MySQLInnoDBDialect
+			hibernate.show_sql=true
+			hibernate.format_sql=false
+			hibernate.query.substitutions=true 1, false 0
+			hibernate.jdbc.batch_size=20
+			hibernate.cache.provider_class=org.hibernate.cache.EhCacheProvider
+			hibernate.current_session_context_class=thread
+			hibernate.transaction.factory_class=org.hibernate.transaction.JDBCTransactionFactory
+			hibernate.cache.provider_configuration_file_resource_path=/ehcache-hibernate.xml
+			hibernate.connection.release_mode=auto 
+			</value>
+		</property>
+	</bean>
+
+</beans>

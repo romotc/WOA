@@ -1,0 +1,67 @@
+package irm.dao;
+
+import irm.entity.MonitorEntity;
+
+/**
+ * 获取SQL
+ * @author	TangDican
+ * @date	2013 Aug 31, 2013
+ * @email	tangdican2008@163.com
+ */
+public class MonitorDao {
+
+	    // 从woaul获取数据
+		public String getSelectSQL(int instanceId)
+		{
+			String getSQL = 
+					  "SELECT " 
+					+ "a.serverAreaId AS areaid," 
+					+ "a.serverISPId AS ispid," 
+					+ "COUNT(DISTINCT a.domain) AS domain_cnt," 
+					+ "CAST(COUNT(DISTINCT a.domain)/b.domain_sum*100 AS DECIMAL(5,3)) AS province_in_rate," 
+					+ "CAST((SUM(a.contentBytes)/1024/1024/c.contentBytes)*100 AS DECIMAL(5,3)) AS province_resource_service_rate " 
+					+ "FROM woaurl a," 
+					+ "(" 
+					+ "SELECT COUNT(DISTINCT domain) AS domain_sum FROM woaurl " 
+					+ "WHERE InstanceId='" + instanceId + "' AND domain != '' AND domain IS NOT NULL AND serverAreaid !=''  AND serverAreaid IS NOT NULL " 
+					+ ") b," 
+					+ "(" 
+					+ "SELECT SUM(ALL contentBytes)/1024 /1024 AS contentBytes FROM woaurl " 
+					+ "WHERE InstanceId='" + instanceId + "' AND domain != '' AND domain IS NOT NULL AND serverAreaid !=''  AND serverAreaid IS NOT NULL" 
+					+ ") c " 
+					+ "WHERE a.InstanceId='"
+				    + instanceId + "' "  
+					+ "AND a.domain != '' " 
+					+ "AND a.domain IS NOT NULL " 
+					+ "AND a.serverAreaid !='' " 
+					+ "AND a.serverAreaid IS NOT NULL " 
+					+ "GROUP BY a.serverAreaId";
+			return getSQL;
+		}
+		
+		// 保存数据到w_resource_v
+		public String getInsertSQL(MonitorEntity me)
+		{
+			String insertSQL = "insert into w_monitor " + "( " 
+			        + "areaid,"
+					+ "site," 
+			        + "domain_cnt,"
+					+ "province_in_rate," 
+					+ "province_resource_service_rate,"
+			        + "ispid ) "
+					+ "value " + "('"
+					+ me.getAreaid()
+					+ "','"
+					+ me.getSite()
+					+ "','"
+					+ me.getDomain_cnt()
+					+ "','"
+					+ me.getProvince_in_rate()
+					+ "','"
+					+ me.getProvince_resource_service_rate()
+					+ "','"
+					+ me.getIspid()
+					+ "')";
+			return insertSQL;
+		}
+}

@@ -1,0 +1,977 @@
+19:31:52,584  INFO Log4JIniter:43 - config//log4j.properties
+19:31:52,631 DEBUG Log4j:53 - Log4j configured
+19:31:52,897  INFO SpringHibernateUtil:44 - jdbc:mysql://mon.hongganju.com:33063/taskdb_default, hongganju, max=200, min=30
+19:31:52,897  INFO SpringHibernateUtil:55 - DBPool1.xml
+19:31:55,459 DEBUG DownloadQueue:68 - add urls to queue:0
+19:31:55,459 DEBUG DownloadQueue:77 - add urls result queue.size:0
+ urls: 
+19:31:55,459  INFO SingleTestMain:167 - 开始执行:http://www.ctrip.com, name=携程旅行网
+19:31:55,459  INFO WOASpider:58 - Start new Task: taskId=19 instanceId=611 seed=http://www.ctrip.com totalUrls=1000
+19:31:55,475  INFO Spider:229 - Starting Spider thread
+19:31:55,475  INFO Spider:229 - Starting Spider thread
+19:31:55,475  INFO Spider:229 - Starting Spider thread
+19:31:55,490  INFO Spider:229 - Starting Spider thread
+19:31:55,490  INFO Spider:229 - Starting Spider thread
+19:31:55,475  INFO DownloadQueue:105 - queue left:0 popup url:http://www.ctrip.com
+19:31:55,506  INFO Spider:229 - Starting Spider thread
+19:31:55,506  INFO Spider:229 - Starting Spider thread
+19:31:55,506  INFO Spider:229 - Starting Spider thread
+19:31:55,506  INFO Spider:229 - Starting Spider thread
+19:31:55,506  INFO SpiderThread:121 - WOA Spider process: http://www.ctrip.com
+19:31:55,522  INFO Spider:229 - Starting Spider thread
+19:32:00,506 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:00,506 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:00,506 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:00,506 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:00,506 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:00,506 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:00,506 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:00,537 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:00,537 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:05,506 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:05,506 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:05,506 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:05,506 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:05,506 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:05,506 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:05,506 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:05,537 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:05,537 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:10,505 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:10,505 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:10,505 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:10,505 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:10,505 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:10,505 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:10,505 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:10,536 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:10,536 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:15,505 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:15,505 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:15,505 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:15,505 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:15,505 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:15,505 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:15,505 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:15,536 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:15,536 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:20,505 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:20,505 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:20,505 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:20,505 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:20,520 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:20,520 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:20,520 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:20,536 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:20,536 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:25,504 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:25,504 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:25,520 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:25,520 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:25,520 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:25,520 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:25,520 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:25,536 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:25,536 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:30,504 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:30,520 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:30,520 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:30,520 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:30,520 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:30,520 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:30,520 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:30,535 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:30,535 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:35,504 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:35,535 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:35,535 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:35,535 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:35,535 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:35,535 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:35,535 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:35,535 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:35,535 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:40,503 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:40,535 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:40,535 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:40,535 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:40,535 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:40,535 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:40,535 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:40,535 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:40,535 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:45,519 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:45,534 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:45,534 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:45,534 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:45,534 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:45,534 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:45,534 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:45,534 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:45,550 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:50,518 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:50,534 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:50,534 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:50,534 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:50,534 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:50,550 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:50,550 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:50,550 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:50,550 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:55,517 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:55,533 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:55,533 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:55,549 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:55,549 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:55,549 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:55,549 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:55,549 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:32:55,549 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:00,516 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:00,532 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:00,532 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:00,548 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:00,548 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:00,548 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:00,548 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:00,548 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:00,548 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:05,515 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:05,531 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:05,531 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:05,547 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:05,547 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:05,547 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:05,547 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:05,547 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:05,547 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:10,514 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:10,530 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:10,530 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:10,545 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:10,545 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:10,545 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:10,545 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:10,545 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:10,545 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:15,513 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:15,529 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:15,529 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:15,544 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:15,544 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:15,544 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:15,544 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:15,544 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:15,544 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:20,512 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:20,528 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:20,528 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:20,543 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:20,543 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:20,543 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:20,543 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:20,543 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:20,543 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:25,511 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:25,527 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:25,527 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:25,542 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:25,542 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:25,542 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:25,542 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:25,542 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:25,542 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:30,510 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:30,526 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:30,526 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:30,541 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:30,541 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:30,541 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:30,541 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:30,541 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:30,541 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:31,307  INFO IEBrowser:170 - 运行结果：0, url=http://www.ctrip.com
+19:33:35,509 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:35,525 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:35,540 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:35,540 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:35,540 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:35,540 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:35,556 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:35,556 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:35,556 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:40,508 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:40,524 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:40,539 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:40,539 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:40,539 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:40,539 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:40,555 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:40,555 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:40,555 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:45,507 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:45,522 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:45,538 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:45,538 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:45,538 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:45,538 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:45,554 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:45,554 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:45,554 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:50,506 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:50,522 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:50,537 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:50,537 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:50,537 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:50,537 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:50,553 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:50,553 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:50,553 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:55,506 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:55,522 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:55,538 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:55,538 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:55,538 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:55,538 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:55,553 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:55,553 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:33:55,553 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:00,507 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:00,522 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:00,538 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:00,538 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:00,538 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:00,538 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:00,554 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:00,554 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:00,554 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:05,507 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:05,523 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:05,538 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:05,538 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:05,538 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:05,538 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:05,554 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:05,554 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:05,554 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:10,508 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:10,523 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:10,539 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:10,539 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:10,539 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:10,539 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:10,554 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:10,554 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:10,554 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:15,508 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:15,524 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:15,539 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:15,539 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:15,539 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:15,539 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:15,555 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:15,555 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:15,555 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:20,508 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:20,524 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:20,540 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:20,540 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:20,540 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:20,540 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:20,555 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:20,555 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:20,555 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:25,509 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:25,556 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:25,540 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:25,540 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:25,540 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:25,540 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:25,524 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:25,556 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:25,556 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:30,556 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:30,556 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:30,556 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:30,556 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:30,556 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:30,556 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:30,556 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:30,556 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:30,556 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:32,634  INFO SpiderThread:143 - WOA Spider process end: http://www.ctrip.com instance.currentUrl=1
+19:34:33,103 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:34:33,103 DEBUG DownloadQueue:68 - add urls to queue:274
+19:34:33,103 DEBUG DownloadQueue:77 - add urls result queue.size:274
+ urls: http://www.ctrip.com
+http://cards.ctrip.com/
+http://english.ctrip.com/
+http://jp.ctrip.com/
+http://kr.ctrip.com/
+http://big5.ctrip.com/
+http://de.ctrip.com/
+http://fr.ctrip.com/
+http://es.ctrip.com/
+http://ru.ctrip.com/
+http://accounts.ctrip.com/myctrip/
+http://accounts.ctrip.com/myctrip/order/offctriporderlist.aspx
+http://accounts.ctrip.com/myctrip/points/mymileage.aspx
+http://accounts.ctrip.com/myctrip/info/userinfoupdate.aspx
+http://accounts.ctrip.com/rewards/
+http://help.ctrip.com/
+http://shouji.ctrip.com/index.html
+http://vacations.ctrip.com
+http://hotels.ctrip.com
+http://hotels.ctrip.com/international/
+http://huixuan.ctrip.com
+http://flights.ctrip.com/
+http://flights.ctrip.com/international/
+http://tuan.ctrip.com/
+http://destguides.ctrip.com/destguides/
+http://trains.ctrip.com
+http://dining.ctrip.com/
+http://www.ctrip.com/crptravel/
+http://pages.ctrip.com/commerce/promote/200811/hotel/djcn/index.htm
+http://vacations.ctrip.com/visa
+http://pages.ctrip.com/commerce/promote/201111/package/zc/zc.html
+http://car.ctrip.com/carbooking/index.aspx
+http://www.ctrip.com/supermarket/ctripmap/mapindex.asp
+http://trains.ctrip.com/trainschedule/
+http://flights.ctrip.com/schedule/scheduleindex.aspx
+http://www.ctrip.com/destinations/weather/moreweather.asp
+http://www.ctrip.com/public/meetingfile.asp
+http://allyes.ctrip.com/main/adfclick?db=ctrip&bid=44,3826,7297&cid=0,0,0&sid=13684&advid=5&camid=59&show=ignore&url=http://pages.ctrip.com/commerce/promote/201111/package/zc/zc.html
+http://youpiao.ctrip.com/
+http://help.ctrip.com/questiondetail.aspx?questionid=475
+http://help.ctrip.com/questiondetail.aspx?questionid=477
+http://pages.ctrip.com/commerce/promote/201201/hotel/jjxjd/index.html
+http://hotels.ctrip.com/hotel/63505.html
+http://hotels.ctrip.com/hotel/22244.html
+http://hotels.ctrip.com/hotel/114325.html
+http://hotels.ctrip.com/hotel/46689.html
+http://flights.ctrip.com/booking/sha-wuh-day-1.html
+http://flights.ctrip.com/booking/sha-tsn-day-1.html
+http://flights.ctrip.com/booking/sha-wnz-day-1.html
+http://flights.ctrip.com/booking/sha-dlc-day-1.html
+http://flights.ctrip.com/booking/sha-she-day-1.html
+http://flights.ctrip.com/booking/sha-tna-day-1.html
+http://flights.ctrip.com/booking/sha-foc-day-1.html
+http://flights.ctrip.com/booking/sha-sia-day-1.html
+http://flights.ctrip.com/booking/sha-tyn-day-1.html
+http://flights.ctrip.com/booking/sha-syx-day-1.html
+http://pages.ctrip.com/commerce/promote/201208/package/mg/index.html
+http://pages.ctrip.com/commerce/promote/201208/other/zhyl/zhonghanggangaoyou.html
+http://cards.ctrip.com/alliancecardnew/lianmingcard208_5.htm
+http://pages.ctrip.com/commerce/promote/201205/package/nh/index.html
+http://pages.ctrip.com/marketing/newsindex.htm
+http://pages.ctrip.com/marketing/news.htm?file=2012083101
+http://pages.ctrip.com/marketing/news.htm?file=2012080804
+http://pages.ctrip.com/marketing/news.htm?file=2012072501
+http://pages.ctrip.com/marketing/news.htm?file=2012072301
+http://pages.ctrip.com/marketing/news.htm?file=2012032101
+http://pages.ctrip.com/marketing/news.htm?file=2012022902
+http://pages.ctrip.com/marketing/news.htm?file=2012031201
+http://pages.ctrip.com/marketing/news.htm?file=2012022705
+http://pages.ctrip.com/marketing/news.htm?file=2012022101
+http://pages.ctrip.com/marketing/news.htm?file=2011123001
+http://pages.ctrip.com/marketing/news.htm?file=2011122901
+http://pages.ctrip.com/marketing/news.htm?file=2011120703
+http://pages.ctrip.com/marketing/news.htm?file=2011122601
+http://pages.ctrip.com/marketing/news.htm?file=2011120501
+http://pages.ctrip.com/marketing/news.htm?file=2011113001
+http://pages.ctrip.com/marketing/news.htm?file=2011112301
+http://pages.ctrip.com/marketing/news.htm?file=2011112304
+http://pages.ctrip.com/marketing/news.htm?file=2011112201
+http://pages.ctrip.com/marketing/news.htm?file=2011102701
+http://pages.ctrip.com/marketing/news.htm?file=2011101701
+http://pages.ctrip.com/marketing/news.htm?file=2011101702
+http://pages.ctrip.com/marketing/news.htm?file=2011101804
+http://pages.ctrip.com/marketing/news.htm?file=2011080901
+http://pages.ctrip.com/marketing/news.htm?file=2011071801
+http://pages.ctrip.com/marketing/news.htm?file=2011062001
+http://pages.ctrip.com/marketing/news.htm?file=2011042401
+http://pages.ctrip.com/marketing/news.htm?file=2011100905
+http://pages.ctrip.com/marketing/news.htm?file=2011092902
+http://pages.ctrip.com/marketing/news.htm?file=2011091903
+http://pages.ctrip.com/marketing/news.htm?file=2011091402
+http://pages.ctrip.com/marketing/news.htm?file=2011091401
+http://pages.ctrip.com/commerce/promote/201209/hotel/tyy_c/index.html
+http://pages.ctrip.com/guoneijipiao/tejiajipiao/guoqing.html
+http://allyes.ctrip.com/main/adfclick?db=ctrip&bid=79,9041,23107&cid=0,0,0&sid=24847&advid=5&camid=117&show=ignore&url=http://pages.ctrip.com/commerce/promote/201112/package/zd/shanghai.html
+http://u.ctrip.com/union/customredirect.aspx?jt=5457d5000a896a2b6c82ae33e55f03fff2fd44bd054ec071b2e8b803f070929b36908c32e8f0400282f4868c07a8dc809627941815b504e832d32d6c0c4fc8366b2da17a1baf18f55de87fe1d40fe373&acct=57f5cbf4e3ffeae39e9b518743ec161ab91a4c2ae47050d6&ouid=
+http://youpiao.ctrip.com/sale/ypbooking/index.aspx
+http://pages.ctrip.com/commerce/promote/201201/other/xcyx/index.html
+http://vacations.ctrip.com/grouptravel/p80668s2.html
+http://vacations.ctrip.com/freetravel/p71441s2.html
+http://vacations.ctrip.com/grouptravel/p57440s2.html
+http://vacations.ctrip.com/freetravel/p72527s2.html
+http://vacations.ctrip.com/grouptravel/p79829s2.html
+http://vacations.ctrip.com/grouptravel/p55830s2.html
+http://vacations.ctrip.com/grouptravel/p50432s2.html
+http://vacations.ctrip.com/grouptravel/p75542s2.html
+http://vacations.ctrip.com/grouptravel/p78337s2.html
+http://vacations.ctrip.com/grouptravel/p80926s2.html
+http://vacations.ctrip.com/grouptravel/p76723s2.html
+http://vacations.ctrip.com/around/p30938s2.html
+http://vacations.ctrip.com/tickets/p42599s2.html
+http://vacations.ctrip.com/cruise/p64530s2.html
+http://vacations.ctrip.com/grouptravel/p81009s2.html
+http://shouji.ctrip.com/iphone.html
+http://shouji.ctrip.com/ctrip_hotel/index.html
+http://www.ctrip.com/qsys/online/onlineqsysqurveylogin.asp?surveyid=e148d861-8aba-42ac-8e5b-7d201f3c8b10&review=
+http://pages.ctrip.com/public/sitemap/sitemap.htm
+http://pages.ctrip.com/public/sitemap/cityhotel.htm
+http://pages.ctrip.com/public/serve%20guideline.htm
+http://pages.ctrip.com/public/ctripab/abctrip.htm
+http://pages.ctrip.com/commerce/promote/201201/other/qygm/index.html
+http://pages.ctrip.com/tour/ingroupline_pages.asp?folder=ingroup0904&file=0177
+http://job.ctrip.com
+http://u.ctrip.com
+http://pages.ctrip.com/commerce/promote/201012/other/yp/index.html
+http://pages.ctrip.com/public/dlhz.htm
+http://pages.ctrip.com/public/ctripad/adyw.htm
+http://pages.ctrip.com/public/contact.htm
+http://accounts.ctrip.com/myctrip/community/communityindex.aspx
+http://pages.ctrip.com/public/diploma/company.htm
+http://pages.ctrip.com/public/insurance/index.htm
+http://pages.ctrip.com/public/link/ctrip_link.html
+http://pages.ctrip.com/public/copyright.htm
+http://www.ctrip.com/
+http://hotels.ctrip.com/hotel/hong-kong58
+http://hotels.ctrip.com/hotel/hangzhou17
+http://hotels.ctrip.com/hotel/sanya43
+http://hotels.ctrip.com/hotel/shanghai2
+http://hotels.ctrip.com/hotel/beijing1
+http://hotels.ctrip.com/hotel/xiamen25
+http://hotels.ctrip.com/hotel/guangzhou32
+http://hotels.ctrip.com/hotel/chengdu28
+http://hotels.ctrip.com/hotel/shenzhen30
+http://hotels.ctrip.com/hotel/macau59
+http://hotels.ctrip.com/hotel/suzhou14
+http://hotels.ctrip.com/hotel/xian10
+http://hotels.ctrip.com/hotel/jinan144
+http://hotels.ctrip.com/hotel/changsha206
+http://hotels.ctrip.com/hotel/nanjing12
+http://hotels.ctrip.com/hotel/wuhan477
+http://hotels.ctrip.com/hotel/lijiang37
+http://hotels.ctrip.com/hotel/dalian6
+http://hotels.ctrip.com/hotel/zhoushan19
+http://hotels.ctrip.com/hotel/changchun158
+http://hotels.ctrip.com/hotel/zhengzhou559
+http://hotels.ctrip.com/hotel/chongqing4
+http://hotels.ctrip.com/hotel/wuxi13
+http://hotels.ctrip.com/hotel/ningbo375
+http://hotels.ctrip.com/hotel/nanning380
+http://hotels.ctrip.com/hotel/qingdao7
+http://hotels.ctrip.com/hotel/hefei278
+http://hotels.ctrip.com/hotel/kunming34
+http://hotels.ctrip.com/hotel/yangshuo871
+http://hotels.ctrip.com/hotel/fuzhou258
+http://hotels.ctrip.com/hotel/haikou42
+http://hotels.ctrip.com/hotel/shenyang451
+http://hotels.ctrip.com/hotel/tianjin3
+http://hotels.ctrip.com/hotel/shantou447
+http://hotels.ctrip.com/hotel/guilin33
+http://hotels.ctrip.com/hotel/huangshan23
+http://hotels.ctrip.com/hotel/taiyuan105
+http://hotels.ctrip.com/hotel/tai-an454
+http://hotels.ctrip.com/hotel/nanchang376
+http://hotels.ctrip.com/hotel/zhuhai31
+http://hotels.ctrip.com/hotel/xining124
+http://hotels.ctrip.com/hotel/weifang475
+http://hotels.ctrip.com/hotel/zhenjiang16
+http://jiudian.ctrip.com/top/shanghai2-gongyu.html
+http://jiudian.ctrip.com/top/shanghai2-fandian.html
+http://jiudian.ctrip.com/top/shanghai2-dujiachun.html
+http://hotels.ctrip.com/hotel/jiuzhaigou91
+http://hotels.ctrip.com/hotel/harbin5
+http://hotels.ctrip.com/hotel/emei-shan95
+http://hotels.ctrip.com/hotel/qiandaohu1332
+http://hotels.ctrip.com/hotel/shijiazhuang428
+http://flights.ctrip.com/booking/sha-shanghai-flights.html
+http://flights.ctrip.com/booking/bjs-beijing-flights.html
+http://flights.ctrip.com/booking/can-guangzhou-flights.html
+http://flights.ctrip.com/booking/szx-shenzhen-flights.html
+http://flights.ctrip.com/booking/ckg-chongqing-flights.html
+http://flights.ctrip.com/booking/ctu-chengdu-flights.html
+http://flights.ctrip.com/booking/kmg-kunming-flights.html
+http://flights.ctrip.com/booking/xmn-xiamen-flights.html
+http://flights.ctrip.com/booking/syx-sanya-flights.html
+http://flights.ctrip.com/booking/hgh-hangzhou-flights.html
+http://flights.ctrip.com/booking/wuh-wuhan-flights.html
+http://flights.ctrip.com/booking/sia-xian-flights.html
+http://flights.ctrip.com/booking/tna-jinan-flights.html
+http://flights.ctrip.com/booking/dlc-dalian-flights.html
+http://flights.ctrip.com/booking/nkg-nanjing-flights.html
+http://9cair.flights.ctrip.com
+http://muair.flights.ctrip.com
+http://czair.flights.ctrip.com
+http://caair.flights.ctrip.com
+http://huair.flights.ctrip.com
+http://mfair.flights.ctrip.com
+http://scair.flights.ctrip.com
+http://hoair.flights.ctrip.com
+http://jdair.flights.ctrip.com
+http://fmair.flights.ctrip.com
+http://3uair.flights.ctrip.com
+http://zhair.flights.ctrip.com
+http://knair.flights.ctrip.com
+http://g5air.flights.ctrip.com
+http://gsair.flights.ctrip.com
+http://flights.ctrip.com/booking/sha-bjs-day-1.html
+http://flights.ctrip.com/booking/sha-szx-day-1.html
+http://flights.ctrip.com/booking/bjs-can-day-1.html
+http://flights.ctrip.com/booking/bjs-szx-day-1.html
+http://flights.ctrip.com/booking/can-sha-day-1.html
+http://flights.ctrip.com/booking/can-bjs-day-1.html
+http://flights.ctrip.com/booking/szx-xmn-day-1.html
+http://flights.ctrip.com/booking/szx-sha-day-1.html
+http://flights.ctrip.com/booking/sia-bjs-day-1.html
+http://flights.ctrip.com/booking/xmn-bjs-day-1.html
+http://flights.ctrip.com/booking/wuh-szx-day-1.html
+http://flights.ctrip.com/booking/syx-bjs-day-1.html
+http://trains.ctrip.com/TrainSchedule/
+http://flights.ctrip.com/schedule/Scheduleindex.aspx
+http://help.ctrip.com/QuestionDetail.aspx?questionId=475
+http://help.ctrip.com/QuestionDetail.aspx?questionId=477
+http://flights.ctrip.com/booking/SHA-WUH-day-1.html
+http://flights.ctrip.com/booking/SHA-TSN-day-1.html
+http://flights.ctrip.com/booking/SHA-WNZ-day-1.html
+http://flights.ctrip.com/booking/SHA-DLC-day-1.html
+http://flights.ctrip.com/booking/SHA-SHE-day-1.html
+http://flights.ctrip.com/booking/SHA-TNA-day-1.html
+http://flights.ctrip.com/booking/SHA-FOC-day-1.html
+http://flights.ctrip.com/booking/SHA-SIA-day-1.html
+http://flights.ctrip.com/booking/SHA-TYN-day-1.html
+http://flights.ctrip.com/booking/SHA-SYX-day-1.html
+http://cards.ctrip.com/AllianceCardNew/lianmingcard208_5.htm
+http://u.ctrip.com/union/customredirect.aspx?jt=5457D5000A896A2B6C82AE33E55F03FFF2FD44BD054EC071B2E8B803F070929B36908C32E8F0400282F4868C07A8DC809627941815B504E832D32D6C0C4FC8366B2DA17A1BAF18F55DE87FE1D40FE373&acct=57F5CBF4E3FFEAE39E9B518743EC161AB91A4C2AE47050D6&ouid=
+http://www.ctrip.com/QSYS/Online/OnlineQsysQurveyLogin.asp?SurveyID=e148d861-8aba-42ac-8e5b-7d201f3c8b10&Review=
+http://pages.ctrip.com/public/sitemap/cityHotel.htm
+http://accounts.ctrip.com/MyCtrip/Community/CommunityIndex.aspx
+http://pages.ctrip.com/public/Insurance/index.htm
+http://flights.ctrip.com/booking/sha-Shanghai-flights.html
+http://flights.ctrip.com/booking/bjs-Beijing-flights.html
+http://flights.ctrip.com/booking/can-Guangzhou-flights.html
+http://flights.ctrip.com/booking/szx-Shenzhen-flights.html
+http://flights.ctrip.com/booking/ckg-Chongqing-flights.html
+http://flights.ctrip.com/booking/ctu-Chengdu-flights.html
+http://flights.ctrip.com/booking/kmg-Kunming-flights.html
+http://flights.ctrip.com/booking/xmn-Xiamen-flights.html
+http://flights.ctrip.com/booking/syx-Sanya-flights.html
+http://flights.ctrip.com/booking/hgh-Hangzhou-flights.html
+http://flights.ctrip.com/booking/wuh-Wuhan-flights.html
+http://flights.ctrip.com/booking/sia-Xian-flights.html
+http://flights.ctrip.com/booking/tna-Jinan-flights.html
+http://flights.ctrip.com/booking/dlc-Dalian-flights.html
+http://flights.ctrip.com/booking/nkg-Nanjing-flights.html
+http://flights.ctrip.com/booking/SHA-BJS-day-1.html
+http://flights.ctrip.com/booking/SHA-SZX-day-1.html
+http://flights.ctrip.com/booking/BJS-CAN-day-1.html
+http://flights.ctrip.com/booking/BJS-SZX-day-1.html
+http://flights.ctrip.com/booking/CAN-SHA-day-1.html
+http://flights.ctrip.com/booking/CAN-BJS-day-1.html
+http://flights.ctrip.com/booking/SZX-XMN-day-1.html
+http://flights.ctrip.com/booking/SZX-SHA-day-1.html
+http://flights.ctrip.com/booking/SIA-BJS-day-1.html
+http://flights.ctrip.com/booking/XMN-BJS-day-1.html
+http://flights.ctrip.com/booking/WUH-SZX-day-1.html
+http://flights.ctrip.com/booking/SYX-BJS-day-1.html
+
+19:34:42,620 DEBUG Spider:351 - alivethread=1 queueSize=274
+19:34:42,620 DEBUG Spider:351 - alivethread=1 queueSize=274
+19:34:42,620  INFO DownloadQueue:105 - queue left:273 popup url:http://www.ctrip.com
+19:34:42,620 DEBUG Spider:351 - alivethread=1 queueSize=274
+19:34:42,620 DEBUG Spider:351 - alivethread=1 queueSize=274
+19:34:42,620 DEBUG Spider:351 - alivethread=1 queueSize=274
+19:34:42,620 DEBUG Spider:351 - alivethread=1 queueSize=274
+19:34:42,620 DEBUG Spider:351 - alivethread=1 queueSize=274
+19:34:42,620  INFO DownloadQueue:105 - queue left:272 popup url:http://cards.ctrip.com/
+19:34:42,620 DEBUG Spider:351 - alivethread=1 queueSize=274
+19:34:42,620 DEBUG Spider:351 - alivethread=1 queueSize=274
+19:34:42,620 DEBUG Spider:351 - alivethread=1 queueSize=274
+19:34:42,635  INFO DownloadQueue:105 - queue left:271 popup url:http://english.ctrip.com/
+19:34:42,635  INFO SpiderThread:121 - WOA Spider process: http://cards.ctrip.com/
+19:34:42,620  INFO SpiderThread:121 - WOA Spider process: http://www.ctrip.com
+19:34:42,635  INFO DownloadQueue:105 - queue left:270 popup url:http://jp.ctrip.com/
+19:34:42,635  INFO SpiderThread:121 - WOA Spider process: http://english.ctrip.com/
+19:34:42,635  INFO DownloadQueue:105 - queue left:269 popup url:http://kr.ctrip.com/
+19:34:42,635  INFO DownloadQueue:105 - queue left:268 popup url:http://big5.ctrip.com/
+19:34:42,635  INFO SpiderThread:121 - WOA Spider process: http://jp.ctrip.com/
+19:34:42,635  INFO DownloadQueue:105 - queue left:267 popup url:http://de.ctrip.com/
+19:34:42,635  INFO SpiderThread:121 - WOA Spider process: http://de.ctrip.com/
+19:34:42,635  INFO DownloadQueue:105 - queue left:266 popup url:http://fr.ctrip.com/
+19:34:42,635  INFO SpiderThread:121 - WOA Spider process: http://kr.ctrip.com/
+19:34:42,635  INFO SpiderThread:121 - WOA Spider process: http://big5.ctrip.com/
+19:34:42,635  INFO SpiderThread:121 - WOA Spider process: http://fr.ctrip.com/
+19:34:42,635  INFO DownloadQueue:105 - queue left:265 popup url:http://es.ctrip.com/
+19:34:42,635  INFO DownloadQueue:105 - queue left:264 popup url:http://ru.ctrip.com/
+19:34:42,635  INFO SpiderThread:121 - WOA Spider process: http://ru.ctrip.com/
+19:34:42,635  INFO SpiderThread:121 - WOA Spider process: http://es.ctrip.com/
+19:49:56,340  INFO Log4JIniter:43 - config//log4j.properties
+19:49:56,434 DEBUG Log4j:53 - Log4j configured
+19:49:56,621  INFO SpringHibernateUtil:44 - jdbc:mysql://mon.hongganju.com:33063/taskdb_default, hongganju, max=200, min=30
+19:49:56,621  INFO SpringHibernateUtil:55 - DBPool1.xml
+19:49:58,090 DEBUG DownloadQueue:68 - add urls to queue:0
+19:49:58,090 DEBUG DownloadQueue:77 - add urls result queue.size:0
+ urls: 
+19:49:58,090  INFO SingleTestMain:167 - 开始执行:http://www.ctrip.com, name=携程旅行网
+19:49:58,090  INFO WOASpider:58 - Start new Task: taskId=19 instanceId=613 seed=http://www.ctrip.com totalUrls=1000
+19:49:58,121  INFO Spider:229 - Starting Spider thread
+19:49:58,152  INFO DownloadQueue:105 - queue left:0 popup url:http://www.ctrip.com
+19:49:58,152  INFO SpiderThread:121 - WOA Spider process: http://www.ctrip.com
+19:49:58,152  INFO Spider:229 - Starting Spider thread
+19:49:58,183  INFO Spider:229 - Starting Spider thread
+19:50:03,199 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:50:03,199 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:50:08,198 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:50:08,198 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:50:13,198 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:50:13,198 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:50:18,213 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:50:18,213 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:50:23,213 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:50:23,213 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:50:28,212 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:50:28,212 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:50:33,212 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:50:33,212 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:50:38,211 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:50:38,211 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:50:43,211 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:50:43,211 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:50:48,211 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:50:48,211 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:50:53,210 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:50:53,210 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:50:58,209 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:50:58,209 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:51:03,239 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:51:03,239 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:51:08,300 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:51:08,331 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:51:13,298 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:51:13,329 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:51:18,297 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:51:18,328 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:51:23,295 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:51:23,326 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:51:28,294 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:51:28,387 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:51:28,856  INFO IEBrowser:170 - 运行结果：0, url=http://www.ctrip.com
+19:51:33,292 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:51:33,402 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:51:38,291 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:51:38,400 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:51:43,289 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:51:43,399 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:51:48,288 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:51:48,397 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:51:53,286 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:51:53,396 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:51:58,286 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:51:58,395 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:52:03,286 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:52:03,395 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:52:08,286 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:52:08,395 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:52:13,286 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:52:13,395 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:52:18,286 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:52:18,395 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:52:23,286 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:52:23,395 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:52:28,286 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:52:28,395 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:52:33,286 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:52:33,395 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:52:38,286 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:52:38,395 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:52:43,082  INFO SpiderThread:143 - WOA Spider process end: http://www.ctrip.com instance.currentUrl=1
+19:52:43,145 DEBUG Spider:351 - alivethread=1 queueSize=0
+19:52:43,145 DEBUG DownloadQueue:68 - add urls to queue:274
+19:52:43,145 DEBUG DownloadQueue:77 - add urls result queue.size:274
+ urls: http://www.ctrip.com
+http://cards.ctrip.com/
+http://english.ctrip.com/
+http://jp.ctrip.com/
+http://kr.ctrip.com/
+http://big5.ctrip.com/
+http://de.ctrip.com/
+http://fr.ctrip.com/
+http://es.ctrip.com/
+http://ru.ctrip.com/
+http://accounts.ctrip.com/myctrip/
+http://accounts.ctrip.com/myctrip/order/offctriporderlist.aspx
+http://accounts.ctrip.com/myctrip/points/mymileage.aspx
+http://accounts.ctrip.com/myctrip/info/userinfoupdate.aspx
+http://accounts.ctrip.com/rewards/
+http://help.ctrip.com/
+http://shouji.ctrip.com/index.html
+http://vacations.ctrip.com
+http://hotels.ctrip.com
+http://hotels.ctrip.com/international/
+http://huixuan.ctrip.com
+http://flights.ctrip.com/
+http://flights.ctrip.com/international/
+http://tuan.ctrip.com/
+http://destguides.ctrip.com/destguides/
+http://trains.ctrip.com
+http://dining.ctrip.com/
+http://www.ctrip.com/crptravel/
+http://pages.ctrip.com/commerce/promote/200811/hotel/djcn/index.htm
+http://vacations.ctrip.com/visa
+http://pages.ctrip.com/commerce/promote/201111/package/zc/zc.html
+http://car.ctrip.com/carbooking/index.aspx
+http://www.ctrip.com/supermarket/ctripmap/mapindex.asp
+http://trains.ctrip.com/trainschedule/
+http://flights.ctrip.com/schedule/scheduleindex.aspx
+http://www.ctrip.com/destinations/weather/moreweather.asp
+http://www.ctrip.com/public/meetingfile.asp
+http://allyes.ctrip.com/main/adfclick?db=ctrip&bid=44,3826,7297&cid=0,0,0&sid=13684&advid=5&camid=59&show=ignore&url=http://pages.ctrip.com/commerce/promote/201111/package/zc/zc.html
+http://youpiao.ctrip.com/
+http://help.ctrip.com/questiondetail.aspx?questionid=475
+http://help.ctrip.com/questiondetail.aspx?questionid=477
+http://pages.ctrip.com/commerce/promote/201201/hotel/jjxjd/index.html
+http://hotels.ctrip.com/hotel/63505.html
+http://hotels.ctrip.com/hotel/114325.html
+http://hotels.ctrip.com/hotel/46689.html
+http://hotels.ctrip.com/hotel/79924.html
+http://flights.ctrip.com/booking/sha-tna-day-1.html
+http://flights.ctrip.com/booking/sha-wuh-day-1.html
+http://flights.ctrip.com/booking/sha-dlc-day-1.html
+http://flights.ctrip.com/booking/sha-lhw-day-1.html
+http://flights.ctrip.com/booking/sha-she-day-1.html
+http://flights.ctrip.com/booking/sha-tsn-day-1.html
+http://flights.ctrip.com/booking/sha-wnz-day-1.html
+http://flights.ctrip.com/booking/sha-foc-day-1.html
+http://flights.ctrip.com/booking/sha-sia-day-1.html
+http://flights.ctrip.com/booking/sha-kwe-day-1.html
+http://pages.ctrip.com/commerce/promote/201208/package/mg/index.html
+http://pages.ctrip.com/commerce/promote/201208/other/zhyl/zhonghanggangaoyou.html
+http://cards.ctrip.com/alliancecardnew/lianmingcard208_5.htm
+http://pages.ctrip.com/commerce/promote/201205/package/nh/index.html
+http://pages.ctrip.com/marketing/newsindex.htm
+http://pages.ctrip.com/marketing/news.htm?file=2012083101
+http://pages.ctrip.com/marketing/news.htm?file=2012080804
+http://pages.ctrip.com/marketing/news.htm?file=2012072501
+http://pages.ctrip.com/marketing/news.htm?file=2012072301
+http://pages.ctrip.com/marketing/news.htm?file=2012032101
+http://pages.ctrip.com/marketing/news.htm?file=2012022902
+http://pages.ctrip.com/marketing/news.htm?file=2012031201
+http://pages.ctrip.com/marketing/news.htm?file=2012022705
+http://pages.ctrip.com/marketing/news.htm?file=2012022101
+http://pages.ctrip.com/marketing/news.htm?file=2011123001
+http://pages.ctrip.com/marketing/news.htm?file=2011122901
+http://pages.ctrip.com/marketing/news.htm?file=2011120703
+http://pages.ctrip.com/marketing/news.htm?file=2011122601
+http://pages.ctrip.com/marketing/news.htm?file=2011120501
+http://pages.ctrip.com/marketing/news.htm?file=2011113001
+http://pages.ctrip.com/marketing/news.htm?file=2011112301
+http://pages.ctrip.com/marketing/news.htm?file=2011112304
+http://pages.ctrip.com/marketing/news.htm?file=2011112201
+http://pages.ctrip.com/marketing/news.htm?file=2011102701
+http://pages.ctrip.com/marketing/news.htm?file=2011101701
+http://pages.ctrip.com/marketing/news.htm?file=2011101702
+http://pages.ctrip.com/marketing/news.htm?file=2011101804
+http://pages.ctrip.com/marketing/news.htm?file=2011080901
+http://pages.ctrip.com/marketing/news.htm?file=2011071801
+http://pages.ctrip.com/marketing/news.htm?file=2011062001
+http://pages.ctrip.com/marketing/news.htm?file=2011042401
+http://pages.ctrip.com/marketing/news.htm?file=2011100905
+http://pages.ctrip.com/marketing/news.htm?file=2011092902
+http://pages.ctrip.com/marketing/news.htm?file=2011091903
+http://pages.ctrip.com/marketing/news.htm?file=2011091402
+http://pages.ctrip.com/marketing/news.htm?file=2011091401
+http://pages.ctrip.com/commerce/promote/201209/hotel/tyy_c/index.html
+http://pages.ctrip.com/guoneijipiao/tejiajipiao/guoqing.html
+http://allyes.ctrip.com/main/adfclick?db=ctrip&bid=79,9041,23107&cid=0,0,0&sid=24847&advid=5&camid=117&show=ignore&url=http://pages.ctrip.com/commerce/promote/201112/package/zd/shanghai.html
+http://u.ctrip.com/union/customredirect.aspx?jt=5457d5000a896a2b6c82ae33e55f03fff2fd44bd054ec071b2e8b803f070929b36908c32e8f0400282f4868c07a8dc809627941815b504e832d32d6c0c4fc8366b2da17a1baf18f55de87fe1d40fe373&acct=57f5cbf4e3ffeae39e9b518743ec161ab91a4c2ae47050d6&ouid=
+http://youpiao.ctrip.com/sale/ypbooking/index.aspx
+http://pages.ctrip.com/commerce/promote/201201/other/xcyx/index.html
+http://vacations.ctrip.com/grouptravel/p80668s2.html
+http://vacations.ctrip.com/freetravel/p71441s2.html
+http://vacations.ctrip.com/grouptravel/p57440s2.html
+http://vacations.ctrip.com/freetravel/p72527s2.html
+http://vacations.ctrip.com/grouptravel/p79829s2.html
+http://vacations.ctrip.com/grouptravel/p55830s2.html
+http://vacations.ctrip.com/grouptravel/p50432s2.html
+http://vacations.ctrip.com/grouptravel/p75542s2.html
+http://vacations.ctrip.com/grouptravel/p78337s2.html
+http://vacations.ctrip.com/grouptravel/p80926s2.html
+http://vacations.ctrip.com/grouptravel/p76723s2.html
+http://vacations.ctrip.com/around/p30938s2.html
+http://vacations.ctrip.com/tickets/p42599s2.html
+http://vacations.ctrip.com/cruise/p64530s2.html
+http://vacations.ctrip.com/grouptravel/p81009s2.html
+http://shouji.ctrip.com/iphone.html
+http://shouji.ctrip.com/ctrip_hotel/index.html
+http://www.ctrip.com/qsys/online/onlineqsysqurveylogin.asp?surveyid=e148d861-8aba-42ac-8e5b-7d201f3c8b10&review=
+http://pages.ctrip.com/public/sitemap/sitemap.htm
+http://pages.ctrip.com/public/sitemap/cityhotel.htm
+http://pages.ctrip.com/public/serve%20guideline.htm
+http://pages.ctrip.com/public/ctripab/abctrip.htm
+http://pages.ctrip.com/commerce/promote/201201/other/qygm/index.html
+http://pages.ctrip.com/tour/ingroupline_pages.asp?folder=ingroup0904&file=0177
+http://job.ctrip.com
+http://u.ctrip.com
+http://pages.ctrip.com/commerce/promote/201012/other/yp/index.html
+http://pages.ctrip.com/public/dlhz.htm
+http://pages.ctrip.com/public/ctripad/adyw.htm
+http://pages.ctrip.com/public/contact.htm
+http://accounts.ctrip.com/myctrip/community/communityindex.aspx
+http://pages.ctrip.com/public/diploma/company.htm
+http://pages.ctrip.com/public/insurance/index.htm
+http://pages.ctrip.com/public/link/ctrip_link.html
+http://pages.ctrip.com/public/copyright.htm
+http://www.ctrip.com/
+http://hotels.ctrip.com/hotel/hong-kong58
+http://hotels.ctrip.com/hotel/hangzhou17
+http://hotels.ctrip.com/hotel/sanya43
+http://hotels.ctrip.com/hotel/shanghai2
+http://hotels.ctrip.com/hotel/beijing1
+http://hotels.ctrip.com/hotel/xiamen25
+http://hotels.ctrip.com/hotel/guangzhou32
+http://hotels.ctrip.com/hotel/chengdu28
+http://hotels.ctrip.com/hotel/shenzhen30
+http://hotels.ctrip.com/hotel/macau59
+http://hotels.ctrip.com/hotel/suzhou14
+http://hotels.ctrip.com/hotel/xian10
+http://hotels.ctrip.com/hotel/jinan144
+http://hotels.ctrip.com/hotel/changsha206
+http://hotels.ctrip.com/hotel/nanjing12
+http://hotels.ctrip.com/hotel/wuhan477
+http://hotels.ctrip.com/hotel/lijiang37
+http://hotels.ctrip.com/hotel/dalian6
+http://hotels.ctrip.com/hotel/zhoushan19
+http://hotels.ctrip.com/hotel/changchun158
+http://hotels.ctrip.com/hotel/zhengzhou559
+http://hotels.ctrip.com/hotel/chongqing4
+http://hotels.ctrip.com/hotel/wuxi13
+http://hotels.ctrip.com/hotel/ningbo375
+http://hotels.ctrip.com/hotel/nanning380
+http://hotels.ctrip.com/hotel/qingdao7
+http://hotels.ctrip.com/hotel/hefei278
+http://hotels.ctrip.com/hotel/kunming34
+http://hotels.ctrip.com/hotel/yangshuo871
+http://hotels.ctrip.com/hotel/fuzhou258
+http://hotels.ctrip.com/hotel/haikou42
+http://hotels.ctrip.com/hotel/shenyang451
+http://hotels.ctrip.com/hotel/tianjin3
+http://hotels.ctrip.com/hotel/shantou447
+http://hotels.ctrip.com/hotel/guilin33
+http://hotels.ctrip.com/hotel/huangshan23
+http://hotels.ctrip.com/hotel/taiyuan105
+http://hotels.ctrip.com/hotel/tai-an454
+http://hotels.ctrip.com/hotel/nanchang376
+http://hotels.ctrip.com/hotel/zhuhai31
+http://hotels.ctrip.com/hotel/xining124
+http://hotels.ctrip.com/hotel/weifang475
+http://hotels.ctrip.com/hotel/zhenjiang16
+http://jiudian.ctrip.com/top/shanghai2-gongyu.html
+http://jiudian.ctrip.com/top/shanghai2-fandian.html
+http://jiudian.ctrip.com/top/shanghai2-dujiachun.html
+http://hotels.ctrip.com/hotel/jiuzhaigou91
+http://hotels.ctrip.com/hotel/harbin5
+http://hotels.ctrip.com/hotel/emei-shan95
+http://hotels.ctrip.com/hotel/qiandaohu1332
+http://hotels.ctrip.com/hotel/shijiazhuang428
+http://flights.ctrip.com/booking/sha-shanghai-flights.html
+http://flights.ctrip.com/booking/bjs-beijing-flights.html
+http://flights.ctrip.com/booking/can-guangzhou-flights.html
+http://flights.ctrip.com/booking/szx-shenzhen-flights.html
+http://flights.ctrip.com/booking/ckg-chongqing-flights.html
+http://flights.ctrip.com/booking/ctu-chengdu-flights.html
+http://flights.ctrip.com/booking/kmg-kunming-flights.html
+http://flights.ctrip.com/booking/xmn-xiamen-flights.html
+http://flights.ctrip.com/booking/syx-sanya-flights.html
+http://flights.ctrip.com/booking/hgh-hangzhou-flights.html
+http://flights.ctrip.com/booking/wuh-wuhan-flights.html
+http://flights.ctrip.com/booking/sia-xian-flights.html
+http://flights.ctrip.com/booking/tna-jinan-flights.html
+http://flights.ctrip.com/booking/dlc-dalian-flights.html
+http://flights.ctrip.com/booking/nkg-nanjing-flights.html
+http://9cair.flights.ctrip.com
+http://muair.flights.ctrip.com
+http://czair.flights.ctrip.com
+http://caair.flights.ctrip.com
+http://huair.flights.ctrip.com
+http://mfair.flights.ctrip.com
+http://scair.flights.ctrip.com
+http://hoair.flights.ctrip.com
+http://jdair.flights.ctrip.com
+http://fmair.flights.ctrip.com
+http://3uair.flights.ctrip.com
+http://zhair.flights.ctrip.com
+http://knair.flights.ctrip.com
+http://g5air.flights.ctrip.com
+http://gsair.flights.ctrip.com
+http://flights.ctrip.com/booking/sha-bjs-day-1.html
+http://flights.ctrip.com/booking/sha-szx-day-1.html
+http://flights.ctrip.com/booking/bjs-can-day-1.html
+http://flights.ctrip.com/booking/bjs-szx-day-1.html
+http://flights.ctrip.com/booking/can-sha-day-1.html
+http://flights.ctrip.com/booking/can-bjs-day-1.html
+http://flights.ctrip.com/booking/szx-xmn-day-1.html
+http://flights.ctrip.com/booking/szx-sha-day-1.html
+http://flights.ctrip.com/booking/sia-bjs-day-1.html
+http://flights.ctrip.com/booking/xmn-bjs-day-1.html
+http://flights.ctrip.com/booking/wuh-szx-day-1.html
+http://flights.ctrip.com/booking/syx-bjs-day-1.html
+http://trains.ctrip.com/TrainSchedule/
+http://flights.ctrip.com/schedule/Scheduleindex.aspx
+http://help.ctrip.com/QuestionDetail.aspx?questionId=475
+http://help.ctrip.com/QuestionDetail.aspx?questionId=477
+http://flights.ctrip.com/booking/SHA-TNA-day-1.html
+http://flights.ctrip.com/booking/SHA-WUH-day-1.html
+http://flights.ctrip.com/booking/SHA-DLC-day-1.html
+http://flights.ctrip.com/booking/SHA-LHW-day-1.html
+http://flights.ctrip.com/booking/SHA-SHE-day-1.html
+http://flights.ctrip.com/booking/SHA-TSN-day-1.html
+http://flights.ctrip.com/booking/SHA-WNZ-day-1.html
+http://flights.ctrip.com/booking/SHA-FOC-day-1.html
+http://flights.ctrip.com/booking/SHA-SIA-day-1.html
+http://flights.ctrip.com/booking/SHA-KWE-day-1.html
+http://cards.ctrip.com/AllianceCardNew/lianmingcard208_5.htm
+http://u.ctrip.com/union/customredirect.aspx?jt=5457D5000A896A2B6C82AE33E55F03FFF2FD44BD054EC071B2E8B803F070929B36908C32E8F0400282F4868C07A8DC809627941815B504E832D32D6C0C4FC8366B2DA17A1BAF18F55DE87FE1D40FE373&acct=57F5CBF4E3FFEAE39E9B518743EC161AB91A4C2AE47050D6&ouid=
+http://www.ctrip.com/QSYS/Online/OnlineQsysQurveyLogin.asp?SurveyID=e148d861-8aba-42ac-8e5b-7d201f3c8b10&Review=
+http://pages.ctrip.com/public/sitemap/cityHotel.htm
+http://accounts.ctrip.com/MyCtrip/Community/CommunityIndex.aspx
+http://pages.ctrip.com/public/Insurance/index.htm
+http://flights.ctrip.com/booking/sha-Shanghai-flights.html
+http://flights.ctrip.com/booking/bjs-Beijing-flights.html
+http://flights.ctrip.com/booking/can-Guangzhou-flights.html
+http://flights.ctrip.com/booking/szx-Shenzhen-flights.html
+http://flights.ctrip.com/booking/ckg-Chongqing-flights.html
+http://flights.ctrip.com/booking/ctu-Chengdu-flights.html
+http://flights.ctrip.com/booking/kmg-Kunming-flights.html
+http://flights.ctrip.com/booking/xmn-Xiamen-flights.html
+http://flights.ctrip.com/booking/syx-Sanya-flights.html
+http://flights.ctrip.com/booking/hgh-Hangzhou-flights.html
+http://flights.ctrip.com/booking/wuh-Wuhan-flights.html
+http://flights.ctrip.com/booking/sia-Xian-flights.html
+http://flights.ctrip.com/booking/tna-Jinan-flights.html
+http://flights.ctrip.com/booking/dlc-Dalian-flights.html
+http://flights.ctrip.com/booking/nkg-Nanjing-flights.html
+http://flights.ctrip.com/booking/SHA-BJS-day-1.html
+http://flights.ctrip.com/booking/SHA-SZX-day-1.html
+http://flights.ctrip.com/booking/BJS-CAN-day-1.html
+http://flights.ctrip.com/booking/BJS-SZX-day-1.html
+http://flights.ctrip.com/booking/CAN-SHA-day-1.html
+http://flights.ctrip.com/booking/CAN-BJS-day-1.html
+http://flights.ctrip.com/booking/SZX-XMN-day-1.html
+http://flights.ctrip.com/booking/SZX-SHA-day-1.html
+http://flights.ctrip.com/booking/SIA-BJS-day-1.html
+http://flights.ctrip.com/booking/XMN-BJS-day-1.html
+http://flights.ctrip.com/booking/WUH-SZX-day-1.html
+http://flights.ctrip.com/booking/SYX-BJS-day-1.html
+
+19:52:47,692 DEBUG Spider:351 - alivethread=1 queueSize=274
+19:52:47,692  INFO DownloadQueue:105 - queue left:273 popup url:http://www.ctrip.com
+19:52:47,692  INFO SpiderThread:121 - WOA Spider process: http://www.ctrip.com
+19:52:47,707 DEBUG Spider:351 - alivethread=1 queueSize=273
+19:52:47,707  INFO DownloadQueue:105 - queue left:272 popup url:http://cards.ctrip.com/
+19:52:47,707  INFO SpiderThread:121 - WOA Spider process: http://cards.ctrip.com/
+19:52:47,707 DEBUG Spider:351 - alivethread=1 queueSize=273
+19:52:47,707  INFO DownloadQueue:105 - queue left:271 popup url:http://english.ctrip.com/
+19:52:47,707  INFO SpiderThread:121 - WOA Spider process: http://english.ctrip.com/

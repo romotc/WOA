@@ -1,0 +1,1 @@
+jre\bin\java -cp lib/*;./config/;./xml flvTest.TestDll %1 %2 %3

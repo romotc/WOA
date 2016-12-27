@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<project basedir="./" default="package.war" name="woa">
+	<!--  set global properties for this build 
+	--> 
+	<!--  ======================================================================= 
+	  --> 
+	  <property name="project.name" value="woa" />
+	  <property name="build.dir" value="build" />
+	  <property name="dist.dir" value="dist" /> 
+	  <property name="src.dir" value="src" /> 
+	  <property name="web.dir" value="WebRoot" />
+	  <property name="web.inf.dir" value="${web.dir}/WEB-INF" />
+	  <property name="lib.dir" value="lib" />
+	  <property name="tomcatlib.dir" value="tomcatLib" />
+	  <property name="project.package.folder" value="com" />
+	<!--  ======================================================================= 
+	--> 
+
+	  
+	<!--  ===========Compile parameter Setting============================================================ 
+	  --> 
+	  <property name="javac.debug" value="on" /> 
+	  <property name="javac.deprecation" value="off" /> 
+	  <property name="javac.optimize" value="off" /> 
+	  
+	
+	  <!--  ======================================================================= 
+	  --> 
+	  <!--  ===========Build Directory Setting============================================================ 
+	  --> 
+	  <property name="build.src.dir" value="${build.dir}/src" />
+	  <property name="build.classes.src.dir" value="${build.dir}/classes/woa" />
+	  <!--  ======================================================================= 
+	  --> 
+	  <!--  ===========Deploy Directory Setting============================================================ 
+	  --> 
+	  <property name="deploy.dir" value="deploy" />
+	  <!--  ===========Classpath Setting=========================================== 
+	  --> 
+	  <!--  Set the jar library 
+	  --> 
+	  <!--  ====Set common library ==== 
+	  --> 
+	<path id="classpath.id">
+	  <fileset dir="${lib.dir}">
+	    <include name="*.jar" />
+	  </fileset>
+	  <fileset dir="${tomcatlib.dir}">
+	    <include name="*.jar" />
+	  </fileset>
+	</path>
+	<!--  ======================================================================= 
+	  --> 
+	<target depends="clean" name="compile.init">
+	  <mkdir dir="${build.dir}" /> 
+	  <mkdir dir="${build.src.dir}" />
+	  <mkdir dir="${build.classes.src.dir}" /> 
+	  <mkdir dir="${deploy.dir}" />
+	  <mkdir dir="${deploy.dir}/config" />
+	  <mkdir dir="${deploy.dir}/WEB-INF" />
+	  <mkdir dir="${deploy.dir}/WEB-INF/classes" />
+	  <mkdir dir="${deploy.dir}/WEB-INF/lib" />
+	  <mkdir dir="${dist.dir}" />
+	</target>
+	
+
+	
+	<target depends="compile.init" name="compile">
+	  <echo message="Compiling woa project" /> 
+	  <copy overwrite="yes" todir="${build.src.dir}">
+	  	<fileset dir="${src.dir}" includes="com/**" />
+	  </copy>
+	  <copy overwrite="yes" todir="${build.src.dir}">
+	  	<fileset dir="${src.dir}" includes="weblech/**" />
+	  </copy>
+	  <javac encoding="utf-8" debug="${javac.debug}" deprecation="${javac.deprecation}" destdir="${build.classes.src.dir}" includes="**/*.java" optimize="${javac.optimize}" failonerror="true">
+		  <classpath refid="classpath.id" /> 
+		  <src path="${build.src.dir}" /> 
+	  </javac>
+	</target>
+	
+	<target depends="compile" name="package.war">
+	  <echo message="Packaging woa war package" /> 
+
+	  <copy overwrite="yes" todir="${deploy.dir}">
+	  	<fileset dir="${web.dir}" includes="*" />
+	  </copy>
+	  <copy overwrite="yes" todir="${deploy.dir}/META-INF">
+	  	<fileset dir="${web.dir}/META-INF" includes="*" />
+	  </copy>
+	  <copy overwrite="yes" todir="${deploy.dir}/WEB-INF/lib">
+	  	<fileset dir="lib" includes="*" />
+	  </copy>
+	   <copy overwrite="yes" todir="${deploy.dir}/config">
+	  	<fileset dir="config" includes="*" />
+	  </copy>
+      <copy overwrite="yes" todir="${deploy.dir}/WEB-INF/classes">
+	    <fileset dir="${build.classes.src.dir}" includes="**" />
+      </copy>
+	  <copy overwrite="yes" todir="${deploy.dir}/WEB-INF/classes/com/hongganju/db/entity/center">
+		<fileset dir="${src.dir}/com/hongganju/db/entity/center" includes="*.xml" />
+	  </copy>
+	  <copy overwrite="yes" todir="${deploy.dir}/WEB-INF/classes/com/hongganju/db/entity/task">
+		<fileset dir="${src.dir}/com/hongganju/db/entity/task" includes="*.xml" />
+	  </copy>
+	  <copy overwrite="yes" todir="${deploy.dir}/WEB-INF/classes/com/netmonitor/cms/entity">
+		<fileset dir="${src.dir}/com/netmonitor/cms/entity" includes="*.xml" />
+	  </copy>
+	  <copy overwrite="yes" todir="${deploy.dir}/WEB-INF/classes">
+		<fileset dir="${src.dir}" includes="*" />
+      </copy>
+	  <copy overwrite="yes" todir="${deploy.dir}/WEB-INF">
+		<fileset dir="WebRoot/WEB-INF" includes="web.xml" />
+      </copy>
+	  <war warfile="${dist.dir}/woa.war" webxml="${deploy.dir}/WEB-INF/web.xml">
+		<fileset dir="${deploy.dir}">
+		</fileset>
+	  </war>
+	</target>
+
+	<target description="Deletes the build and deploy directory" name="clean">
+	  <delete dir="${build.dir}" quiet="true" /> 
+	  <delete dir="${deploy.dir}" quiet="true" /> 
+	  <delete dir="${dist.dir}" quiet="true" /> 
+	</target>
+</project>

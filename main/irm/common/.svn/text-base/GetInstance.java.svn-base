@@ -1,0 +1,51 @@
+package irm.common;
+/**
+ * 获取指定instanceid实例的数据
+ * @author	TangDican
+ * @email	tangdican2008@163.com
+ * @date	2013 Aug 28
+ */
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import statistic.DataManager;
+
+import irm.entity.InstanceEntity;
+
+public class GetInstance {
+	// 实例化类
+	InstanceEntity ie = new InstanceEntity();
+	DBEntry dbe = new DBEntry();
+	DataManager manage= dbe.DBlogin();
+	// 从数据库表中获取数据
+	public InstanceEntity getInstance(int instanceId)
+	{
+		String sql = 
+				"select " +
+				"b.taskid as taskid," +
+				"b.WebName as webName," +
+				"b.taskType as type," +
+				"b.DBID as dbId " +
+				"from woainstance a,woatask b "+ 
+				"where a.TaskinstanceId = '"+ instanceId + 
+				"' and a.taskid=b.taskid";
+		try {
+			// 执行SQL
+			ResultSet rs = manage.executeQuery(sql);
+			if (rs.next()) {
+				// 获取值
+				ie.setTaskId(Integer.parseInt(rs.getString("taskid")));
+				ie.setWebName(rs.getString("webName"));
+				ie.setDbId(Short.parseShort(rs.getString("dbId")));
+				ie.setType(Integer.parseInt(rs.getString("type")));
+				rs.close();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if (manage != null)
+				manage.closeConn();
+		}
+		return ie;
+	}
+}

@@ -1,0 +1,577 @@
+package statistic;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.text.DecimalFormat;
+import java.util.HashMap;
+import java.util.Map;
+
+import net.sf.json.JSONObject;
+public class DomainService {
+
+	protected PropertyUtil propertyUtil=new PropertyUtil();
+	protected String url=propertyUtil.getProperty("db.url");
+	protected String username=propertyUtil.getProperty("db.user"); 
+	protected String password=propertyUtil.getProperty("db.password"); 
+	
+	public  void DomainStatic(int taskID,int taskInstanceId ,Short DBID){
+		//按domain统计
+		statistic(taskID,taskInstanceId,DBID);// 任务ID，实例ID，dbid
+	}
+	
+	public DataManager TaskDBByID(Short id)
+	{
+		String sql = "select url,username,password from dbmanagerread where id = '"+id+"'";
+		DataManager manage= new DataManager(url,username,password);
+		DataManager manages = null;
+		try {
+
+			ResultSet rs = manage.executeQuery(sql);
+			while(rs.next()){
+				String urlmore = rs.getString(1);
+				String usernamemore  = rs.getString(2);
+				String passwordmore  = rs.getString(3);
+				manages = new DataManager(urlmore ,usernamemore ,passwordmore);
+			}
+			rs.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			if(manage != null)
+				manage.closeConn();
+		}
+
+		return manages;
+	}
+
+	public void statistic(int taskid,int instanceId,Short dbid){
+
+
+		DataManager manage = TaskDBByID(dbid);
+		try{
+			String nodes = " SELECT NodeIP,NodeAreaId,NodeISPId FROM woaurl WHERE InstanceId='"+instanceId+"' GROUP BY NodeIP ";
+			ResultSet rs = manage.executeQuery(nodes);
+			String[] areaisp = new String[3];
+			HashMap<String, String[]> nodemaps = new HashMap<String, String[]>();
+
+			while (rs.next()) {
+				String IP = rs.getString(1);
+				String area = rs.getString(2);
+				String isp = rs.getString(3);
+				areaisp[0] = area;
+				areaisp[1] = isp;
+				areaisp[2] = IP;
+				if(!nodemaps.containsKey(IP))
+				{
+					nodemaps.put(IP, areaisp);
+				}
+			}
+			rs.close();
+			for(Map.Entry<String, String[]> val : nodemaps.entrySet())
+			{
+				String [] value = val.getValue();
+				String prov = value[0].substring(0, 4);
+
+				String perfors = " SELECT " +
+				" COUNT(Id) AS count," +
+				" COUNT(IF((httpCode = 200),1 , 0)) AS num," +
+				" CAST(SUM(networkBytes) / 1024 / 1024   AS DECIMAL(10,3)) AS networkBytes," +
+				" domain " +
+				" FROM woaurl WHERE " +
+				" InstanceId='"+instanceId+"' " +
+				" and domain !='' and domain !='null' and domain !='*' and domain !='0.0.0.0' and domain is not null " +
+				" and NodeAreaId ='"+value[0]+"' and NodeISPId = '"+value[1]+"' " +
+				" GROUP BY domain ";
+				rs = manage.executeQuery(perfors);
+				HashMap<String,String[]> nums = new HashMap<String,String[]>();
+				while (rs.next()) {
+					String count = rs.getString(1);
+					String countright = rs.getString(2);
+					String networkBytes = rs.getString(3);
+					String domain = rs.getString(4);
+					String [] num = new String[3];
+					num[0] = count;
+					num[1] = countright;
+					num[2] = networkBytes;
+					if(!nums.containsKey(domain))
+					{
+						nums.put(domain,num );
+					}
+				}
+				rs.close();
+				
+				perfors = " SELECT " +
+				" COUNT(uploadTime) AS count, " +
+				" COUNT(IF((httpCode = 200),1 , 0)) AS num," +
+				" CAST(SUM(downloadTime) / 1000 AS DECIMAL(10,3)) AS downloadTime, " +
+				" CAST(SUM(downloadSpeed)  AS DECIMAL(10,3)) AS downloadSpeed, " +
+				" CAST(SUM(dnsResolveTotalTime) / 1000 AS DECIMAL(10,3)) AS dnsResolveTotalTime, " +
+				" CAST(SUM(ConnectionTime) / 1000 AS DECIMAL(10,3)) AS ConnectionTime, " +
+				" CAST(SUM(RedirectTime) / 1000 AS DECIMAL(10,3)) AS RedirectTime, " +
+				" CAST(SUM(FirstByteTime) / 1000 AS DECIMAL(10,3)) AS FirstByteTime, " +
+				" CAST(SUM(networkBytes) / 1024 / 1024 AS DECIMAL(10,3)) AS networkBytes," +
+				" domain " +
+				" FROM woaurl WHERE " +
+				" InstanceId='"+instanceId+"' " +
+				" and NodeAreaId ='"+value[0]+"' and NodeISPId = '"+value[1]+"' " +
+				" and serverAreaId like '"+prov+"%' and serverISPId = '"+value[1]+"' " +
+				" GROUP BY domain ";
+				rs = manage.executeQuery(perfors);
+				HashMap<String,JSONObject> array1 = new HashMap<String,JSONObject>();
+				while (rs.next()) {
+					String count = rs.getString(1);
+					String num = rs.getString(2);
+					String downloadTime = rs.getString(3);
+					String downloadSpeed = rs.getString(4);
+					String dnsResolveTotalTime = rs.getString(5);
+					String ConnectionTime = rs.getString(6);
+					String RedirectTime = rs.getString(7);
+					String FirstByteTime = rs.getString(8);
+					String networkBytes = rs.getString(9);
+					String domain = rs.getString(10);
+					
+					if(null == downloadTime)
+						downloadTime = "0";
+					if(null == downloadSpeed)
+						downloadSpeed = "0";
+					if(null == networkBytes)
+						networkBytes = "0";
+					if(null == dnsResolveTotalTime)
+						dnsResolveTotalTime = "0";
+					if(null == ConnectionTime)
+						ConnectionTime = "0";
+					if(null == RedirectTime)
+						RedirectTime = "0";
+					if(null == FirstByteTime)
+						FirstByteTime = "0";
+				    
+					JSONObject obj = new JSONObject();
+					obj.put("count", count);
+					obj.put("num", num);
+					obj.put("downloadTime", downloadTime);
+					obj.put("downloadSpeed", downloadSpeed);
+					obj.put("dnsResolveTotalTime", dnsResolveTotalTime);
+					obj.put("ConnectionTime", ConnectionTime);
+					obj.put("RedirectTime", RedirectTime);
+					obj.put("FirstByteTime", FirstByteTime);
+					obj.put("networkBytes", networkBytes);
+					if(!array1.containsKey(domain))
+					{
+						array1.put(domain, obj);
+					}
+				}
+				rs.close();
+				perfors = " SELECT " +
+				" COUNT(uploadTime) AS count, " +
+				" COUNT(IF((httpCode = 200),1 , 0)) AS num," +
+				" CAST(SUM(downloadTime) / 1000 AS DECIMAL(10,3)) AS downloadTime, " +
+				" CAST(SUM(downloadSpeed)  AS DECIMAL(10,3)) AS downloadSpeed, " +
+				" CAST(SUM(dnsResolveTotalTime) / 1000 AS DECIMAL(10,3)) AS dnsResolveTotalTime, " +
+				" CAST(SUM(ConnectionTime) / 1000 AS DECIMAL(10,3)) AS ConnectionTime, " +
+				" CAST(SUM(RedirectTime) / 1000 AS DECIMAL(10,3)) AS RedirectTime, " +
+				" CAST(SUM(FirstByteTime) / 1000 AS DECIMAL(10,3)) AS FirstByteTime, " +
+				" CAST(SUM(networkBytes) / 1024 / 1024 AS DECIMAL(10,3)) AS networkBytes," +
+				" domain " +
+				" FROM woaurl WHERE " +
+				" InstanceId='"+instanceId+"' " +
+				" and NodeAreaId ='"+value[0]+"' and NodeISPId = '"+value[1]+"' " +
+				" and serverAreaId not like '"+prov+"%' and serverISPId = '"+value[1]+"' " +
+				" GROUP BY domain ";
+				rs = manage.executeQuery(perfors);
+				HashMap<String,JSONObject> array2 = new HashMap<String,JSONObject>();
+				while (rs.next()) {
+					String count = rs.getString(1);
+					String num = rs.getString(2);
+					String downloadTime = rs.getString(3);
+					String downloadSpeed = rs.getString(4);
+					String dnsResolveTotalTime = rs.getString(5);
+					String ConnectionTime = rs.getString(6);
+					String RedirectTime = rs.getString(7);
+					String FirstByteTime = rs.getString(8);
+					String networkBytes = rs.getString(9);
+					String domain = rs.getString(10);
+					
+					if(null == downloadTime)
+						downloadTime = "0";
+					if(null == downloadSpeed)
+						downloadSpeed = "0";
+					if(null == networkBytes)
+						networkBytes = "0";
+					if(null == dnsResolveTotalTime)
+						dnsResolveTotalTime = "0";
+					if(null == ConnectionTime)
+						ConnectionTime = "0";
+					if(null == RedirectTime)
+						RedirectTime = "0";
+					if(null == FirstByteTime)
+						FirstByteTime = "0";
+				    
+					JSONObject obj = new JSONObject();
+					obj.put("count", count);
+					obj.put("num", num);
+					obj.put("downloadTime", downloadTime);
+					obj.put("downloadSpeed", downloadSpeed);
+					obj.put("dnsResolveTotalTime", dnsResolveTotalTime);
+					obj.put("ConnectionTime", ConnectionTime);
+					obj.put("RedirectTime", RedirectTime);
+					obj.put("FirstByteTime", FirstByteTime);
+					obj.put("networkBytes", networkBytes);
+					if(!array2.containsKey(domain))
+					{
+						array2.put(domain, obj);
+					}
+				}
+				rs.close();
+				perfors = " SELECT " +
+				" COUNT(uploadTime) AS count, " +
+				" COUNT(IF((httpCode = 200),1 , 0)) AS num," +
+				" CAST(SUM(downloadTime) / 1000 AS DECIMAL(10,3)) AS downloadTime, " +
+				" CAST(SUM(downloadSpeed)  AS DECIMAL(10,3)) AS downloadSpeed, " +
+				" CAST(SUM(dnsResolveTotalTime) / 1000 AS DECIMAL(10,3)) AS dnsResolveTotalTime, " +
+				" CAST(SUM(ConnectionTime) / 1000 AS DECIMAL(10,3)) AS ConnectionTime, " +
+				" CAST(SUM(RedirectTime) / 1000 AS DECIMAL(10,3)) AS RedirectTime, " +
+				" CAST(SUM(FirstByteTime) / 1000 AS DECIMAL(10,3)) AS FirstByteTime, " +
+				" CAST(SUM(networkBytes) / 1024 / 1024 AS DECIMAL(10,3)) AS networkBytes," +
+				" domain,serverISPId " +
+				" FROM woaurl WHERE " +
+				" InstanceId='"+instanceId+"' " +
+				" and NodeAreaId ='"+value[0]+"' and NodeISPId = '"+value[1]+"' " +
+				" and serverISPId != '"+value[1]+"' " +
+				" GROUP BY domain,serverISPId ";
+				rs = manage.executeQuery(perfors);
+				
+				HashMap<String,HashMap<String,JSONObject>> array3 = new HashMap<String,HashMap<String,JSONObject>>();
+				while (rs.next()) {
+					String count = rs.getString(1);
+					String num = rs.getString(2);
+					String downloadTime = rs.getString(3);
+					String downloadSpeed = rs.getString(4);	
+					String dnsResolveTotalTime = rs.getString(5);
+					String ConnectionTime = rs.getString(6);
+					String RedirectTime = rs.getString(7);
+					String FirstByteTime = rs.getString(8);
+					String networkBytes = rs.getString(9);
+					String domain = rs.getString(10);
+					String serverISPId = rs.getString(11);
+
+					if(null == downloadTime)
+						downloadTime = "0";
+					if(null == downloadSpeed)
+						downloadSpeed = "0";
+					if(null == networkBytes)
+						networkBytes = "0";
+					if(null == dnsResolveTotalTime)
+						dnsResolveTotalTime = "0";
+					if(null == ConnectionTime)
+						ConnectionTime = "0";
+					if(null == RedirectTime)
+						RedirectTime = "0";
+					if(null == FirstByteTime)
+						FirstByteTime = "0";
+				    
+					JSONObject obj = new JSONObject();
+					obj.put("count", count);
+					obj.put("num", num);
+					obj.put("downloadTime", downloadTime);
+					obj.put("downloadSpeed", downloadSpeed);
+					obj.put("dnsResolveTotalTime", dnsResolveTotalTime);
+					obj.put("ConnectionTime", ConnectionTime);
+					obj.put("RedirectTime", RedirectTime);
+					obj.put("FirstByteTime", FirstByteTime);
+					obj.put("networkBytes", networkBytes);
+					
+					if(!array3.containsKey(domain)){
+						HashMap<String,JSONObject> array = new HashMap<String,JSONObject>();
+						array.put(serverISPId, obj);
+						array3.put(domain, array);
+					}
+					else {
+						HashMap<String,JSONObject> array = array3.get(domain);
+						if(!array.containsKey(serverISPId))
+						{
+							array.put(serverISPId, obj);
+						}
+					}
+				}
+				rs.close();
+				DecimalFormat  df  = new  DecimalFormat("0.000");
+				for(Map.Entry<String, JSONObject> domanval : array1.entrySet())
+				{
+					String domainval = domanval.getKey();
+					JSONObject  obj = domanval.getValue();
+
+					String domaintype = "1";
+					String split = ".com";
+					if(domainval.indexOf(".com") != -1)
+					{
+						split = ".com";
+					}
+					else if(domainval.indexOf(".com") == -1 && domainval.indexOf(".cn") != -1)	
+					{
+						split = ".cn";
+					}
+					else if(domainval.indexOf(".net") != -1){
+						split = ".net";
+					}
+					String[] domval = domainval.split(split);
+					String[] dom = domval[0].split("\\.");
+					if(dom.length == 1)
+					{
+						domaintype = "1";
+					}
+					else if(dom.length == 2)
+					{
+						domaintype = "2";
+					} 
+					else if(dom.length == 3)
+					{
+						domaintype = "3";
+					} 
+					else if(dom.length == 4)
+					{
+						domaintype = "4";
+					} 
+
+					String [] res = nums.get(domainval);
+					int counts = Integer.parseInt(res[0]);//全部
+
+					if(null != obj.get("count"))
+					{
+						String count = obj.get("count").toString();
+						String right = obj.get("num").toString();
+						String countrate  = df.format(Float.parseFloat(count)/counts);
+						String downloadTime = obj.get("downloadTime").toString();
+						String downloadTimerate  = df.format(Float.parseFloat(downloadTime)/Integer.parseInt(right));
+						String downloadSpeed = obj.get("downloadSpeed").toString();
+						String downloadSpeedrate  = df.format(Float.parseFloat(downloadSpeed)/Integer.parseInt(right));
+						
+						String dnsResolveTotalTime = "0";
+						if(null != obj.get("dnsResolveTotalTime"))
+						       dnsResolveTotalTime = obj.get("dnsResolveTotalTime").toString();
+						String dnsResolveTotalTimerate  = df.format(Float.parseFloat(dnsResolveTotalTime)/Integer.parseInt(right));
+						String ConnectionTime = "0";
+						if(null != obj.get("ConnectionTime"))
+						       ConnectionTime = obj.get("ConnectionTime").toString();
+						String ConnectionTimerate  = df.format(Float.parseFloat(ConnectionTime)/Integer.parseInt(right));
+						String RedirectTime = "0";
+						if(null != obj.get("RedirectTime"))
+							RedirectTime = obj.get("RedirectTime").toString();
+						String RedirectTimerate  = df.format(Float.parseFloat(RedirectTime)/Integer.parseInt(right));
+						String FirstByteTime = "0";
+						if(null != obj.get("FirstByteTime"))
+							  FirstByteTime = obj.get("FirstByteTime").toString();
+						String FirstByteTimerate  = df.format(Float.parseFloat(FirstByteTime)/Integer.parseInt(right));
+						
+						String networkBytes = obj.get("networkBytes").toString();
+						
+						String networkBytesrate  = "1";
+						String bytes = res[2];
+						if(null != bytes)
+						{
+							Float size = Float.parseFloat(bytes);
+							networkBytesrate = df.format(Float.parseFloat(networkBytes)/size);
+						}
+							
+						String insertsql =  " insert into woadomain  " +
+						" (taskid,NodeIP,NodeAreaId,NodeISPId,InstanceId,domain,domaintype,serverAreaId,serverISPId," +
+						" LocalRights,LocalUrls,LocalRate,sumdownloadtime,downloadtime,sumdownspeed,downspeed,networkBytes,networkBytesRate," +
+						" sumdnstime,dnstime,sumconnecttime,connecttime,sumfirstbytes,firstbytes,sumRedirectTime,RedirectTime)" +
+						" values ('"+taskid+"','"+value[2]+"','"+value[0]+"','"+value[1]+"','"+instanceId+"','"+domainval+"','"+domaintype+"','"+prov+"00','"+value[1]+"',"+
+						" '"+right+"','"+count+"','"+countrate+"','"+downloadTime+"','"+downloadTimerate+"','"+downloadSpeed+"','"+downloadSpeedrate+"','"+networkBytes+"','"+networkBytesrate+"'," +
+						" '"+dnsResolveTotalTime+"','"+dnsResolveTotalTimerate+"','"+ConnectionTime+"','"+ConnectionTimerate+"','"+RedirectTime+"','"+RedirectTimerate+"','"+FirstByteTime+"','"+FirstByteTimerate+"')" ;
+						
+						manage.execute(insertsql);
+					}
+				}
+				for(Map.Entry<String, JSONObject> domanval : array2.entrySet())
+				{
+					String domainval = domanval.getKey();
+					JSONObject  obj1 = domanval.getValue();
+
+					String domaintype = "1";
+					String split = ".com";
+					if(domainval.indexOf(".com") != -1)
+					{
+						split = ".com";
+					}
+					else if(domainval.indexOf(".com") == -1 && domainval.indexOf(".cn") != -1)
+					{
+						split = ".cn";
+					}
+					else if(domainval.indexOf(".net") != -1){
+						split = ".net";
+					}
+					String[] domval = domainval.split(split);
+					String[] dom = domval[0].split("\\.");
+					if(dom.length == 1)
+					{
+						domaintype = "1";
+					}
+					else if(dom.length == 2)
+					{
+						domaintype = "2";
+					} 
+					else if(dom.length == 3)
+					{
+						domaintype = "3";
+					} 
+					else if(dom.length == 4)
+					{
+						domaintype = "4";
+					} 
+					String [] res = nums.get(domainval);
+					int counts = Integer.parseInt(res[0]);//全部
+					
+					if(null != obj1.get("count"))
+					{
+						String count = obj1.get("count").toString();
+						String right = obj1.get("num").toString();
+						String countrate  = df.format(Float.parseFloat(count)/counts);
+						String downloadTime = obj1.get("downloadTime").toString();
+						String downloadTimerate  = df.format(Float.parseFloat(downloadTime)/Integer.parseInt(right));
+						String downloadSpeed = obj1.get("downloadSpeed").toString();
+						String downloadSpeedrate  = df.format(Float.parseFloat(downloadSpeed)/Integer.parseInt(right));
+						
+						String dnsResolveTotalTime = "0";
+						if(null != obj1.get("dnsResolveTotalTime"))
+						       dnsResolveTotalTime = obj1.get("dnsResolveTotalTime").toString();
+						String dnsResolveTotalTimerate  = df.format(Float.parseFloat(dnsResolveTotalTime)/Integer.parseInt(right));
+						String ConnectionTime = "0";
+						if(null != obj1.get("ConnectionTime"))
+						       ConnectionTime = obj1.get("ConnectionTime").toString();
+						String ConnectionTimerate  = df.format(Float.parseFloat(ConnectionTime)/Integer.parseInt(right));
+						String RedirectTime = "0";
+						if(null != obj1.get("RedirectTime"))
+							RedirectTime = obj1.get("RedirectTime").toString();
+						String RedirectTimerate  = df.format(Float.parseFloat(RedirectTime)/Integer.parseInt(right));
+						String FirstByteTime = "0";
+						if(null != obj1.get("FirstByteTime"))
+							  FirstByteTime = obj1.get("FirstByteTime").toString();
+						String FirstByteTimerate  = df.format(Float.parseFloat(FirstByteTime)/Integer.parseInt(right));
+						
+						String networkBytes = obj1.get("networkBytes").toString();
+
+						String networkBytesrate  = "1";
+						String bytes = res[2];
+						if(null != bytes)
+						{
+							Float size = Float.parseFloat(bytes);
+							networkBytesrate = df.format(Float.parseFloat(networkBytes)/size);
+						}
+							
+						
+						String insertsql =  " insert into woadomain  " +
+						" (taskid,NodeIP,NodeAreaId,NodeISPId,InstanceId,domain,domaintype,serverAreaId,serverISPId," +
+						" LocalRights,LocalUrls,LocalRate,sumdownloadtime,downloadtime,sumdownspeed,downspeed,networkBytes,networkBytesRate," +
+						" sumdnstime,dnstime,sumconnecttime,connecttime,sumfirstbytes,firstbytes,sumRedirectTime,RedirectTime)" +
+						" values ('"+taskid+"','"+value[2]+"','"+value[0]+"','"+value[1]+"','"+instanceId+"','"+domainval+"','"+domaintype+"','CN0000','"+value[1]+"',"+
+						" '"+right+"','"+count+"','"+countrate+"','"+downloadTime+"','"+downloadTimerate+"','"+downloadSpeed+"','"+downloadSpeedrate+"','"+networkBytes+"','"+networkBytesrate+"'," +
+						 " '"+dnsResolveTotalTime+"','"+dnsResolveTotalTimerate+"','"+ConnectionTime+"','"+ConnectionTimerate+"','"+RedirectTime+"','"+RedirectTimerate+"','"+FirstByteTime+"','"+FirstByteTimerate+"')" ;
+
+						manage.execute(insertsql);
+					}
+				}
+				for(Map.Entry<String,HashMap<String,JSONObject>> domanval : array3.entrySet())
+				{
+					String domainval = domanval.getKey();
+					HashMap<String,JSONObject>  array = domanval.getValue();
+
+					String domaintype = "1";
+					String split = ".com";
+					if(domainval.indexOf(".com") != -1)
+					{
+						split = ".com";
+					}
+					else if(domainval.indexOf(".com") == -1 && domainval.indexOf(".cn") != -1)
+					{
+						split = ".cn";
+					}
+					else if(domainval.indexOf(".net") != -1){
+						split = ".net";
+					}
+					String[] domval = domainval.split(split);
+					String[] dom = domval[0].split("\\.");
+					if(dom.length == 1)
+					{
+						domaintype = "1";
+					}
+					else if(dom.length == 2)
+					{
+						domaintype = "2";
+					} 
+					else if(dom.length == 3)
+					{
+						domaintype = "3";
+					} 
+					else if(dom.length == 4)
+					{
+						domaintype = "4";
+					} 
+					String [] res = nums.get(domainval);
+					int counts = Integer.parseInt(res[0]);//全部
+					
+					if(array.size() > 0){
+						for(Map.Entry<String,JSONObject> vall : array.entrySet())
+						{
+							String isp = vall.getKey();
+							JSONObject obj2 = (JSONObject) vall.getValue();
+							if(null != obj2.get("count"))
+							{
+								String count = obj2.get("count").toString();
+								String right = obj2.get("num").toString();
+								String countrate  = df.format(Float.parseFloat(count)/counts);
+								String downloadTime = obj2.get("downloadTime").toString();
+								String downloadTimerate  = df.format(Float.parseFloat(downloadTime)/Integer.parseInt(right));
+								String downloadSpeed = obj2.get("downloadSpeed").toString();
+								String downloadSpeedrate  = df.format(Float.parseFloat(downloadSpeed)/Integer.parseInt(right));
+								
+								String dnsResolveTotalTime = "0";
+								if(null != obj2.get("dnsResolveTotalTime"))
+								       dnsResolveTotalTime = obj2.get("dnsResolveTotalTime").toString();
+								String dnsResolveTotalTimerate  = df.format(Float.parseFloat(dnsResolveTotalTime)/Integer.parseInt(right));
+								String ConnectionTime = "0";
+								if(null != obj2.get("ConnectionTime"))
+								       ConnectionTime = obj2.get("ConnectionTime").toString();
+								String ConnectionTimerate  = df.format(Float.parseFloat(ConnectionTime)/Integer.parseInt(right));
+								String RedirectTime = "0";
+								if(null != obj2.get("RedirectTime"))
+									RedirectTime = obj2.get("RedirectTime").toString();
+								String RedirectTimerate  = df.format(Float.parseFloat(RedirectTime)/Integer.parseInt(right));
+								String FirstByteTime = "0";
+								if(null != obj2.get("FirstByteTime"))
+									  FirstByteTime = obj2.get("FirstByteTime").toString();
+								String FirstByteTimerate  = df.format(Float.parseFloat(FirstByteTime)/Integer.parseInt(right));
+								
+								String networkBytes = obj2.get("networkBytes").toString();
+								
+								String networkBytesrate  = "1";
+								String bytes = res[2];
+								if(null != bytes)
+								{
+									Float size = Float.parseFloat(bytes);
+									networkBytesrate = df.format(Float.parseFloat(networkBytes)/size);
+								}
+									
+								String insertsql =  " insert into woadomain  " +
+								" (taskid,NodeIP,NodeAreaId,NodeISPId,InstanceId,domain,domaintype,serverAreaId,serverISPId," +
+								" LocalRights,LocalUrls,LocalRate,sumdownloadtime,downloadtime,sumdownspeed,downspeed,networkBytes,networkBytesRate," +
+								" sumdnstime,dnstime,sumconnecttime,connecttime,sumfirstbytes,firstbytes,sumRedirectTime,RedirectTime)" +
+								" values ('"+taskid+"','"+value[2]+"','"+value[0]+"','"+value[1]+"','"+instanceId+"','"+domainval+"','"+domaintype+"','CN0000','"+isp+"',"+
+								" '"+right+"','"+count+"','"+countrate+"','"+downloadTime+"','"+downloadTimerate+"','"+downloadSpeed+"','"+downloadSpeedrate+"','"+networkBytes+"','"+networkBytesrate+"'," +
+								" '"+dnsResolveTotalTime+"','"+dnsResolveTotalTimerate+"','"+ConnectionTime+"','"+ConnectionTimerate+"','"+RedirectTime+"','"+RedirectTimerate+"','"+FirstByteTime+"','"+FirstByteTimerate+"')" ;
+								
+								manage.execute(insertsql);
+							}
+						}
+					}
+				}
+				
+				
+			}
+
+			manage.closeConn();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+}

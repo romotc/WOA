@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+					http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+					http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd
+					http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd"
+	default-lazy-init="true">
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    	<property name="location">
+    		<value>classpath:jdbc.properties</value>
+    		<!--
+			<value>/WEB-INF/jdbc.properties</value>
+			-->
+		</property>
+	</bean>	
+	<bean id="dataSource" class="org.logicalcobwebs.proxool.ProxoolDataSource">		
+		<property name="driver" value="${db.driver}"/>
+		<property name="driverUrl" value="${db.url}"/>
+		<property name="user" value="${db.user}"/>
+		<property name="password" value="${db.password}"/>
+    	<property name="alias" value="${db.alias}"/>
+    	
+    	<!-- 自动检查连接是否断的测试sql语句 --> 
+    	<property name="houseKeepingTestSql" value="${db.houseKeepingTestSql}"/>
+    	<property name="delegateProperties" value="characterEncoding=${db.characterEncoding}"/>
+    	
+    	<!-- 连接池允许的最大连接数(正式库700，测试库10)--> 
+    	<property name="maximumConnectionCount" value="${db.maximumConnectionCount}"/>
+    	 <!-- 连接池开启的最小连接数(正式库350，测试库5)--> 
+    	<property name="minimumConnectionCount" value="${db.minimumConnectionCount}"/>
+    	 <!-- 最少保持的空闲连接数(正式库10，测试库1)--> 
+    	 <property name="prototypeCount" value="10"/>
+
+    	<!-- proxool自动侦察各个连接状态的时间间隔(毫秒),  侦察到空闲的连接就马上回收,超时的销毁 -->
+    	<property name="houseKeepingSleepTime" value="90000"/> 
+    	
+    	<!-- 一个活动连接的最长时间15分钟，单位毫秒 --> 
+    	<property name="maximumActiveTime" value="900000"/> 
+    	<!-- 一个连接的最长活动时间1小时，单位毫秒 -->
+    	<property name="maximumConnectionLifetime" value="3600000"/> 
+    	
+    	<!-- 自动检查连接是否断掉开关 --> 
+    	<property name="testBeforeUse" value="true"/> 
+		
+    	
+	</bean>
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="mappingDirectoryLocations">
+			<list>
+			<value>classpath:/com/hongganju/db/entity/center</value>
+			<!--  
+			<value>file:xml</value>
+			-->
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<value>
+			hibernate.dialect=org.hibernate.dialect.MySQLInnoDBDialect
+			hibernate.show_sql=true
+			hibernate.format_sql=false
+			hibernate.query.substitutions=true 1, false 0
+			hibernate.jdbc.batch_size=20
+			hibernate.cache.provider_class=org.hibernate.cache.EhCacheProvider
+			hibernate.current_session_context_class=thread
+			hibernate.transaction.factory_class=org.hibernate.transaction.JDBCTransactionFactory
+			hibernate.connection.release_mode=auto 
+			</value>
+		</property>
+	</bean>
+	
+	
+	
+	<!-- 事务配置
+	<bean id="txManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	 -->
+	
+	<!-- 使用annotation 自动注册bean,并检查@Required,@Autowired的属性已被注入 -->
+	<context:component-scan base-package="com.netmonitor" />
+	<context:component-scan base-package="com.hongganju" />
+	<context:component-scan base-package="test" />
+	<context:component-scan base-package="rtm" />
+	
+	
+	<!-- 使用annotation定义事务 
+	<tx:annotation-driven transaction-manager="txManager" />
+	-->
+</beans>

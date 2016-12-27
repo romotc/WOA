@@ -1,0 +1,1 @@
+jre\bin\java -cp lib/*;./config/;./xml com.hongganju.woa.browser.ie.IEBrowserMain %1 %2 %3

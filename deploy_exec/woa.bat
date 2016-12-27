@@ -1,0 +1,1 @@
+jre\bin\java -cp lib/*;./config/;./xml SingleTestMain %1 %2 %3
